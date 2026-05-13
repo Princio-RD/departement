@@ -802,3 +802,109 @@ in SYSTEMPATH\Database\BaseConnection.php on line 606.
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
 13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+ERROR - 2026-05-13 07:55:56 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#7 D:\Animation\departement\app\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 D:\Animation\departement\app\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+#7 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+#8 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#14 {main}
+CRITICAL - 2026-05-13 07:55:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: GET, Route: user/conges/nouveau]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 6 APPPATH\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+ERROR - 2026-05-13 07:55:57 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#7 D:\Animation\departement\app\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 D:\Animation\departement\app\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+#7 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+#8 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#14 {main}
+CRITICAL - 2026-05-13 07:55:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: GET, Route: user/conges/nouveau]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 6 APPPATH\Controllers\UserCongeController.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\UserCongeController->new()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')

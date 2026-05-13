@@ -9,10 +9,23 @@ use CodeIgniter\HTTP\RedirectResponse;
 
 class UserCongeController extends BaseController
 {
+    /**
+     * TODO: brancher sur l'auth réelle.
+     */
+    private function getEmployeId(): int
+    {
+        $id = session('employe_id');
+        if (is_numeric($id)) {
+            return (int) $id;
+        }
+
+        // Fallback (dev)
+        return 3;
+    }
+
     public function new(): string
     {
-        // TODO: remplacer par l'utilisateur connecté
-        $employeId = 3;
+        $employeId = $this->getEmployeId();
         $annee     = (int) date('Y');
 
         $typeModel  = new TypeCongeModel();
@@ -45,10 +58,61 @@ class UserCongeController extends BaseController
         ]);
     }
 
+    public function index(): string
+    {
+        $employeId = $this->getEmployeId();
+        $statut    = (string) ($this->request->getGet('statut') ?? '');
+
+        $allowedStatuts = ['en_attente', 'approuvee', 'refusee', 'annulee'];
+        if ($statut !== '' && ! in_array($statut, $allowedStatuts, true)) {
+            $statut = '';
+        }
+
+        $congeModel = new CongeModel();
+        $builder    = $congeModel
+            ->select('conges.*, types_conge.libelle as type_libelle')
+            ->join('types_conge', 'types_conge.id = conges.type_conge_id', 'left')
+            ->where('conges.employe_id', $employeId);
+
+        if ($statut !== '') {
+            $builder->where('conges.statut', $statut);
+        }
+
+        $demandes = $builder
+            ->orderBy('conges.created_at', 'DESC')
+            ->findAll();
+
+        return view('user/mes-demandes', [
+            'demandes' => $demandes,
+            'statut'   => $statut,
+        ]);
+    }
+
+    public function cancel(int $id): RedirectResponse
+    {
+        $employeId   = $this->getEmployeId();
+        $congeModel  = new CongeModel();
+        $demande     = $congeModel->where('id', $id)->where('employe_id', $employeId)->first();
+
+        if (! $demande) {
+            return redirect()->to('/user/conges')->with('error', 'Demande introuvable.');
+        }
+
+        if (($demande['statut'] ?? '') !== 'en_attente') {
+            return redirect()->to('/user/conges')->with('error', 'Seules les demandes en attente peuvent être annulées.');
+        }
+
+        $congeModel->update($id, [
+            'statut'         => 'annulee',
+            'commentaire_rh' => "Annulé par l'employé",
+        ]);
+
+        return redirect()->to('/user/conges')->with('success', 'Demande annulée.');
+    }
+
     public function create(): RedirectResponse
     {
-       
-        $employeId = 3;
+        $employeId = $this->getEmployeId();
         $annee     = (int) date('Y');
 
         $rules = [
@@ -67,22 +131,45 @@ class UserCongeController extends BaseController
         $dateFin     = (string) $this->request->getPost('date_fin');
         $motif       = (string) $this->request->getPost('motif');
 
-        if (strtotime($dateDebut) === false || strtotime($dateFin) === false || $dateDebut > $dateFin) {
+        $tsDeb = strtotime($dateDebut);
+        $tsFin = strtotime($dateFin);
+        if ($tsDeb === false || $tsFin === false || $dateDebut > $dateFin) {
             return redirect()->back()->withInput()->with('error', 'Dates invalides : la date de début doit être antérieure à la date de fin.');
         }
 
-        $nbJours = (int) floor((strtotime($dateFin) - strtotime($dateDebut)) / 86400) + 1;
+        // Préavis minimum 48h
+        if ($tsDeb < (time() + (48 * 3600))) {
+            return redirect()->back()->withInput()->with('error', 'Préavis insuffisant : la demande doit être faite au moins 48h avant la date de début.');
+        }
+
+        $nbJours = (int) floor(($tsFin - $tsDeb) / 86400) + 1;
         if ($nbJours <= 0) {
             return redirect()->back()->withInput()->with('error', 'Nombre de jours invalide.');
         }
 
-        // Vérification solde (si type déductible)
+        // Vérification type
         $typeModel = new TypeCongeModel();
         $type      = $typeModel->find($typeCongeId);
         if (! $type) {
             return redirect()->back()->withInput()->with('error', 'Type de congé introuvable.');
         }
 
+        // Chevauchement avec une demande existante (hors annulées/refusées)
+        $congeModel = new CongeModel();
+        $overlap = $congeModel
+            ->where('employe_id', $employeId)
+            ->whereNotIn('statut', ['refusee', 'annulee'])
+            ->groupStart()
+                ->where('date_debut <=', $dateFin)
+                ->where('date_fin >=', $dateDebut)
+            ->groupEnd()
+            ->first();
+
+        if ($overlap) {
+            return redirect()->back()->withInput()->with('error', 'Chevauchement détecté avec une demande existante.');
+        }
+
+    
         $deductible = (int) ($type['deductible'] ?? 1) === 1;
         if ($deductible) {
             $soldeModel = new SoldeModel();
@@ -102,7 +189,6 @@ class UserCongeController extends BaseController
         }
 
         // Création demande (statut en attente, solde non déduit ici)
-        $congeModel = new CongeModel();
         $congeModel->insert([
             'employe_id'     => $employeId,
             'type_conge_id'  => $typeCongeId,
