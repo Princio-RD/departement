@@ -26,8 +26,8 @@
           <span class="nav-badge alert"><?= (int)$counts['en_attente'] ?></span>
         <?php endif; ?>
       </a></li>
-      <li><a href="#"><i class="bi bi-archive"></i> Historique</a></li>
-      <li><a href="#"><i class="bi bi-people"></i> Soldes employés</a></li>
+      <li><a href="/rh/historique"><i class="bi bi-archive"></i> Historique</a></li>
+      <li><a href="/rh/soldes"><i class="bi bi-people"></i> Soldes employés</a></li>
     </ul>
     <div class="sidebar-user">
       <?php $u = session()->get('user'); ?>

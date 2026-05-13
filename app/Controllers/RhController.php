@@ -207,4 +207,85 @@ class RhController extends BaseController
 
         return redirect()->to('/rh')->with('success', 'Demande refusée.');
     }
+
+    /**
+     * Historique des demandes (toutes sauf en_attente par défaut).
+     */
+    public function historique(): string
+    {
+        $deptId = (int) ($this->request->getGet('departement_id') ?? 0);
+        $statut = (string) ($this->request->getGet('statut') ?? '');
+
+        $congeModel = new CongeModel();
+
+        $builder = $congeModel
+            ->select('conges.*, employees.nom, employees.prenom, employees.departement_id, departements.nom as departement_nom, types_conge.libelle as type_libelle')
+            ->join('employees', 'employees.id = conges.employe_id')
+            ->join('departements', 'departements.id = employees.departement_id', 'left')
+            ->join('types_conge', 'types_conge.id = conges.type_conge_id');
+
+        // par défaut: historique = tout sauf en attente
+        if ($statut !== '') {
+            $builder->where('conges.statut', $statut);
+        } else {
+            $builder->where('conges.statut !=', 'en_attente');
+        }
+
+        if ($deptId > 0) {
+            $builder->where('employees.departement_id', $deptId);
+        }
+
+        $demandes = $builder->orderBy('conges.created_at', 'DESC')->findAll();
+
+        $deptModel = new \App\Models\DepartementModel();
+        $departements = $deptModel->findAll();
+
+        return view('RH/historique', [
+            'demandes' => $demandes,
+            'departements' => $departements,
+            'filters' => [
+                'departement_id' => $deptId,
+                'statut' => $statut,
+            ],
+        ]);
+    }
+
+    /**
+     * Tableau des soldes des employés (année courante).
+     */
+    public function soldes(): string
+    {
+        $annee = (int) ($this->request->getGet('annee') ?? date('Y'));
+        $deptId = (int) ($this->request->getGet('departement_id') ?? 0);
+
+        $soldeModel = new SoldeModel();
+        $builder = $soldeModel
+            ->select('soldes.*, employees.nom, employees.prenom, employees.departement_id, departements.nom as departement_nom, types_conge.libelle as type_libelle, types_conge.deductible')
+            ->join('employees', 'employees.id = soldes.employe_id')
+            ->join('departements', 'departements.id = employees.departement_id', 'left')
+            ->join('types_conge', 'types_conge.id = soldes.type_conge_id')
+            ->where('soldes.annee', $annee);
+
+        if ($deptId > 0) {
+            $builder->where('employees.departement_id', $deptId);
+        }
+
+        $soldes = $builder
+            ->orderBy('departements.nom', 'ASC')
+            ->orderBy('employees.nom', 'ASC')
+            ->orderBy('types_conge.libelle', 'ASC')
+            ->findAll();
+
+        $deptModel = new \App\Models\DepartementModel();
+        $departements = $deptModel->findAll();
+
+        return view('RH/soldes', [
+            'soldes' => $soldes,
+            'departements' => $departements,
+            'filters' => [
+                'annee' => $annee,
+                'departement_id' => $deptId,
+            ],
+        ]);
+    }
 }

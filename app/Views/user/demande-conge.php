@@ -12,12 +12,10 @@ $flashError   = session()->getFlashdata('error');
 $flashSuccess = is_string($flashSuccess) ? $flashSuccess : '';
 $flashError   = is_string($flashError) ? $flashError : '';
 
-$errType = session('errors.type_conge_id');
-$errDeb  = session('errors.date_debut');
-$errFin  = session('errors.date_fin');
-$errType = is_string($errType) ? $errType : '';
-$errDeb  = is_string($errDeb) ? $errDeb : '';
-$errFin  = is_string($errFin) ? $errFin : '';
+$errors = session('errors') ?? [];
+$errType = (isset($errors['type_conge_id']) && is_string($errors['type_conge_id'])) ? $errors['type_conge_id'] : '';
+$errDeb  = (isset($errors['date_debut']) && is_string($errors['date_debut'])) ? $errors['date_debut'] : '';
+$errFin  = (isset($errors['date_fin']) && is_string($errors['date_fin'])) ? $errors['date_fin'] : '';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -28,8 +26,8 @@ $errFin  = is_string($errFin) ? $errFin : '';
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/css/main.css"/>
-<link rel="stylesheet" href="/css/demande-conge.css"/>
+<link rel="stylesheet" href="/assets/css/main.css"/>
+<link rel="stylesheet" href="/assets/css/demande-conge.css"/>
 </head>
 <body>
 

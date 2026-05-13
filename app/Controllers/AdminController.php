@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CongeModel;
 use App\Models\DepartementModel;
 use App\Models\EmployeModel;
 use App\Models\SoldeModel;
@@ -12,14 +13,87 @@ class AdminController extends BaseController
 {
     public function dashboard(): string
     {
-        // Vue statique fournie (HTML). Pour l'instant on la sert telle quelle.
-        return view('admin/dashboard-admin');
+        $annee = (int) date('Y');
+        $today = date('Y-m-d');
+
+        $employeModel = new EmployeModel();
+        $congeModel = new CongeModel();
+        $deptModel = new DepartementModel();
+
+        $stats = [
+            'employes_actifs' => $employeModel->where('actif', 1)->countAllResults(),
+            'demandes_en_attente' => (new CongeModel())->where('statut', 'en_attente')->countAllResults(),
+            // approx: demandes approuvées ce mois
+            'approuvees_mois' => (new CongeModel())
+                ->where('statut', 'approuvee')
+                ->like('created_at', date('Y-m'), 'after')
+                ->countAllResults(),
+            'departements' => $deptModel->countAllResults(),
+        ];
+
+        // Absents aujourd'hui = congés approuvés dont today est dans [date_debut, date_fin]
+        $absents = $congeModel
+            ->select('conges.*, employees.nom, employees.prenom, types_conge.libelle as type_libelle')
+            ->join('employees', 'employees.id = conges.employe_id')
+            ->join('types_conge', 'types_conge.id = conges.type_conge_id')
+            ->where('conges.statut', 'approuvee')
+            ->where('conges.date_debut <=', $today)
+            ->where('conges.date_fin >=', $today)
+            ->orderBy('conges.date_fin', 'ASC')
+            ->findAll();
+        $stats['absents_aujourdhui'] = is_array($absents) ? count($absents) : 0;
+
+        $lastDemandes = (new CongeModel())
+            ->select('conges.*, employees.nom, employees.prenom, departements.nom as departement_nom, types_conge.libelle as type_libelle')
+            ->join('employees', 'employees.id = conges.employe_id')
+            ->join('departements', 'departements.id = employees.departement_id', 'left')
+            ->join('types_conge', 'types_conge.id = conges.type_conge_id')
+            ->orderBy('conges.created_at', 'DESC')
+            ->limit(10)
+            ->findAll();
+
+        return view('admin/dashboard-admin', [
+            'stats' => $stats,
+            'absents' => $absents,
+            'lastDemandes' => $lastDemandes,
+            'annee' => $annee,
+        ]);
     }
 
     public function employes(): string
     {
-        // Vue statique fournie (HTML). Elle sera rendue dynamique ensuite.
-        return view('admin/gestion-employes');
+        $deptModel = new DepartementModel();
+        $departements = $deptModel->orderBy('nom', 'ASC')->findAll();
+
+        $deptId = (int) ($this->request->getGet('departement_id') ?? 0);
+        $q = trim((string) ($this->request->getGet('q') ?? ''));
+
+        $employeModel = new EmployeModel();
+        $builder = $employeModel
+            ->select('employees.*, departements.nom as departement_nom')
+            ->join('departements', 'departements.id = employees.departement_id', 'left');
+
+        if ($deptId > 0) {
+            $builder->where('employees.departement_id', $deptId);
+        }
+        if ($q !== '') {
+            $builder->groupStart()
+                ->like('employees.nom', $q)
+                ->orLike('employees.prenom', $q)
+                ->orLike('employees.email', $q)
+                ->groupEnd();
+        }
+
+        $employes = $builder->orderBy('employees.actif', 'DESC')->orderBy('employees.nom', 'ASC')->findAll();
+
+        return view('admin/gestion-employes', [
+            'employes' => $employes,
+            'departements' => $departements,
+            'filters' => [
+                'departement_id' => $deptId,
+                'q' => $q,
+            ],
+        ]);
     }
 
     /**
@@ -111,5 +185,51 @@ class AdminController extends BaseController
         $employeModel->update($id, ['actif' => $newActif]);
 
         return redirect()->back()->with('success', $newActif ? 'Employé réactivé.' : 'Employé désactivé.');
+    }
+
+    /**
+     * Liste des départements (à implémenter)
+     */
+    public function departements(): string
+    {
+        // TODO: implémenter la gestion des départements
+        return view('admin/departements', [
+            'departements' => (new DepartementModel())->orderBy('nom', 'ASC')->findAll()
+        ]);
+    }
+
+    /**
+     * Liste des types de congé (à implémenter)
+     */
+    public function typesConge(): string
+    {
+        // TODO: implémenter la gestion des types de congé
+        return view('admin/types-conge', [
+            'types' => (new TypeCongeModel())->findAll()
+        ]);
+    }
+
+    /**
+     * Vue des soldes annuels (à implémenter)
+     */
+    public function soldes(): string
+    {
+        // TODO: implémenter la vue des soldes
+        $annee = (int) date('Y');
+        return view('admin/soldes', [
+            'annee' => $annee,
+            'soldes' => [] // à implémenter
+        ]);
+    }
+
+    /**
+     * Validation des demandes (vue unifiée RH/Admin)
+     */
+    public function validationRh(): string
+    {
+        // Redirige vers la vue de validation RH (partagée)
+        return view('RH/validation-rh', [
+            'isAdmin' => true
+        ]);
     }
 }

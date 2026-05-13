@@ -20,7 +20,14 @@ class AuthFilter implements FilterInterface
             $allowed = array_map(static fn ($r) => strtolower(trim((string) $r)), $arguments);
 
             if (! in_array($role, $allowed, true)) {
-                return redirect()->to('/login')->with('error', 'Accès non autorisé.');
+                // Déjà connecté mais pas autorisé sur cette zone: on renvoie vers sa zone.
+                $to = match ($role) {
+                    'admin' => '/admin',
+                    'rh'    => '/rh',
+                    default => '/user/dashboard',
+                };
+
+                return redirect()->to($to)->with('error', 'Accès non autorisé.');
             }
         }
 

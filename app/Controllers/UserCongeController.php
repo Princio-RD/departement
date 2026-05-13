@@ -126,4 +126,65 @@ class UserCongeController extends BaseController
 
         return redirect()->to('/user/conges/nouveau')->with('success', 'Demande envoyée et en attente de validation.');
     }
+
+    /**
+     * Liste des demandes de l'employé connecté.
+     */
+    public function index(): string|RedirectResponse
+    {
+        $user = session()->get('user');
+        if (! $user || empty($user['id'])) {
+            return redirect()->to('/login')->with('error', 'Veuillez vous connecter.');
+        }
+
+        $employeId = (int) $user['id'];
+        $statut = (string) ($this->request->getGet('statut') ?? '');
+
+        $congeModel = new CongeModel();
+        $builder = $congeModel
+            ->select('conges.*, types_conge.libelle as type_libelle')
+            ->join('types_conge', 'types_conge.id = conges.type_conge_id')
+            ->where('conges.employe_id', $employeId);
+
+        if ($statut !== '') {
+            $builder->where('conges.statut', $statut);
+        }
+
+        $demandes = $builder->orderBy('conges.created_at', 'DESC')->findAll();
+
+        return view('user/mes-demandes', [
+            'demandes' => $demandes,
+            'filters' => [
+                'statut' => $statut,
+            ],
+        ]);
+    }
+
+    /**
+     * Annuler une demande en attente.
+     */
+    public function cancel(int $id): RedirectResponse
+    {
+        $user = session()->get('user');
+        if (! $user || empty($user['id'])) {
+            return redirect()->to('/login')->with('error', 'Veuillez vous connecter.');
+        }
+
+        $employeId = (int) $user['id'];
+
+        $congeModel = new CongeModel();
+        $demande = $congeModel->where('id', $id)->where('employe_id', $employeId)->first();
+        if (! $demande) {
+            return redirect()->back()->with('error', 'Demande introuvable.');
+        }
+
+        if (($demande['statut'] ?? '') !== 'en_attente') {
+            return redirect()->back()->with('error', 'Seules les demandes en attente peuvent être annulées.');
+        }
+
+        // On conserve l'historique: on passe le statut à 'annulee'
+        $congeModel->update($id, ['statut' => 'annulee']);
+
+        return redirect()->to('/user/conges')->with('success', 'Demande annulée.');
+    }
 }
