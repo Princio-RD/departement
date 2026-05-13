@@ -9,10 +9,14 @@ use CodeIgniter\HTTP\RedirectResponse;
 
 class UserCongeController extends BaseController
 {
-    public function new(): string
+    public function new(): string|RedirectResponse
     {
-        // TODO: remplacer par l'utilisateur connecté
-        $employeId = 3;
+        $user = session()->get('user');
+        if (! $user || empty($user['id'])) {
+            return redirect()->to('/login')->with('error', 'Veuillez vous connecter.');
+        }
+
+        $employeId = (int) $user['id'];
         $annee     = (int) date('Y');
 
         $typeModel  = new TypeCongeModel();
@@ -47,8 +51,12 @@ class UserCongeController extends BaseController
 
     public function create(): RedirectResponse
     {
-       
-        $employeId = 3;
+        $user = session()->get('user');
+        if (! $user || empty($user['id'])) {
+            return redirect()->to('/login')->with('error', 'Veuillez vous connecter.');
+        }
+
+        $employeId = (int) $user['id'];
         $annee     = (int) date('Y');
 
         $rules = [
