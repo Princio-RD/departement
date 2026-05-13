@@ -1,0 +1,26 @@
+/* Styles des métriques spécifiques au dashboard employé */
+.metric-icon.forest-bg {
+  background: var(--mint);
+  color: var(--forest);
+}
+
+/* Style spécifique pour les soldes cards (déjà dans main.css mais présent ici au cas où) */
+.solde-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* La classe form-layout utilisée dans demande-conge.html */
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+}

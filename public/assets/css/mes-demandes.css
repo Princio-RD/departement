@@ -1,0 +1,25 @@
+
+/* Filtre de statut (dropdown) */
+.filtre-statut {
+  font-size: .8rem;
+  padding: 6px 10px;
+  width: auto;
+}
+
+/* Style pour le badge d'alerte sur le nombre de demandes */
+.nav-badge.alert {
+  background: var(--danger);
+  color: var(--white);
+}
+
+/* Action d'annulation dans le tableau */
+.btn-cancel {
+  background: var(--cream);
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.btn-cancel:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
