@@ -431,3 +431,462 @@ in SYSTEMPATH\Database\BaseConnection.php on line 606.
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
 13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+CRITICAL - 2026-05-13 08:31:37 --> CodeIgniter\Filters\Exceptions\FilterException: "pagecache" filter must have a matching alias defined.
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 402.
+ 1 SYSTEMPATH\Filters\Filters.php(402): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(319): CodeIgniter\Filters\Filters->getRequiredFilters()
+ 3 SYSTEMPATH\Filters\Filters.php(353): CodeIgniter\Filters\Filters->getRequiredClasses()
+ 4 SYSTEMPATH\CodeIgniter.php(373): CodeIgniter\Filters\Filters->runRequired()
+ 5 SYSTEMPATH\CodeIgniter.php(333): CodeIgniter\CodeIgniter->runRequiredBeforeFilters()
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+CRITICAL - 2026-05-13 08:31:43 --> CodeIgniter\Filters\Exceptions\FilterException: "pagecache" filter must have a matching alias defined.
+[Method: GET, Route: login]
+in SYSTEMPATH\Filters\Filters.php on line 402.
+ 1 SYSTEMPATH\Filters\Filters.php(402): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(319): CodeIgniter\Filters\Filters->getRequiredFilters()
+ 3 SYSTEMPATH\Filters\Filters.php(353): CodeIgniter\Filters\Filters->getRequiredClasses()
+ 4 SYSTEMPATH\CodeIgniter.php(373): CodeIgniter\Filters\Filters->runRequired()
+ 5 SYSTEMPATH\CodeIgniter.php(333): CodeIgniter\CodeIgniter->runRequiredBeforeFilters()
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+CRITICAL - 2026-05-13 08:31:46 --> CodeIgniter\Filters\Exceptions\FilterException: "pagecache" filter must have a matching alias defined.
+[Method: GET, Route: login]
+in SYSTEMPATH\Filters\Filters.php on line 402.
+ 1 SYSTEMPATH\Filters\Filters.php(402): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(319): CodeIgniter\Filters\Filters->getRequiredFilters()
+ 3 SYSTEMPATH\Filters\Filters.php(353): CodeIgniter\Filters\Filters->getRequiredClasses()
+ 4 SYSTEMPATH\CodeIgniter.php(373): CodeIgniter\Filters\Filters->runRequired()
+ 5 SYSTEMPATH\CodeIgniter.php(333): CodeIgniter\CodeIgniter->runRequiredBeforeFilters()
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+CRITICAL - 2026-05-13 08:31:56 --> CodeIgniter\Filters\Exceptions\FilterException: "pagecache" filter must have a matching alias defined.
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 402.
+ 1 SYSTEMPATH\Filters\Filters.php(402): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(319): CodeIgniter\Filters\Filters->getRequiredFilters()
+ 3 SYSTEMPATH\Filters\Filters.php(353): CodeIgniter\Filters\Filters->getRequiredClasses()
+ 4 SYSTEMPATH\CodeIgniter.php(373): CodeIgniter\Filters\Filters->runRequired()
+ 5 SYSTEMPATH\CodeIgniter.php(333): CodeIgniter\CodeIgniter->runRequiredBeforeFilters()
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+CRITICAL - 2026-05-13 08:32:12 --> CodeIgniter\Filters\Exceptions\FilterException: "pagecache" filter must have a matching alias defined.
+[Method: GET, Route: login]
+in SYSTEMPATH\Filters\Filters.php on line 402.
+ 1 SYSTEMPATH\Filters\Filters.php(402): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(319): CodeIgniter\Filters\Filters->getRequiredFilters()
+ 3 SYSTEMPATH\Filters\Filters.php(353): CodeIgniter\Filters\Filters->getRequiredClasses()
+ 4 SYSTEMPATH\CodeIgniter.php(373): CodeIgniter\Filters\Filters->runRequired()
+ 5 SYSTEMPATH\CodeIgniter.php(333): CodeIgniter\CodeIgniter->runRequiredBeforeFilters()
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+DEBUG - 2026-05-13 08:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 08:44:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 08:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 08:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-13 08:53:30 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+ERROR - 2026-05-13 08:53:30 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+CRITICAL - 2026-05-13 08:53:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+DEBUG - 2026-05-13 08:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-13 08:57:15 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+ERROR - 2026-05-13 08:57:15 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+CRITICAL - 2026-05-13 08:57:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+DEBUG - 2026-05-13 09:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-13 09:03:01 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+ERROR - 2026-05-13 09:03:01 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+CRITICAL - 2026-05-13 09:03:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+DEBUG - 2026-05-13 09:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-13 09:12:34 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(39): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+ERROR - 2026-05-13 09:12:34 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:111
+Stack trace:
+#0 D:\Animation\departement\system\Database\SQLite3\Connection.php(111): SQLite3->__construct()
+#1 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#8 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#9 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#15 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in D:\Animation\departement\system\Database\SQLite3\Connection.php:118
+Stack trace:
+#0 D:\Animation\departement\system\Database\BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 D:\Animation\departement\system\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Animation\departement\system\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 D:\Animation\departement\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 D:\Animation\departement\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Animation\departement\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Animation\departement\app\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+#7 D:\Animation\departement\app\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+#8 D:\Animation\departement\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 D:\Animation\departement\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 D:\Animation\departement\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 D:\Animation\departement\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\Animation\departement\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 D:\Animation\departement\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#14 D:\Animation\departement\system\rewrite.php(44): require_once('...')
+#15 {main}
+CRITICAL - 2026-05-13 09:12:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\EmployeModel.php(43): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\AuthController.php(35): App\Models\EmployeModel->findActiveByEmail()
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Animation\\departement\\public\\index.php')
+DEBUG - 2026-05-13 09:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -14,7 +14,7 @@ class EmployeModel extends Model
     
   
     protected $allowedFields    = [
-        'nom', 'prenom', 'password', 'role', 
+        'nom', 'prenom', 'email', 'password', 'role', 
         'departement_id', 'date_embauche', 'actif'
     ];
 

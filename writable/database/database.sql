@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS employees (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   nom TEXT NOT NULL,
   prenom TEXT NOT NULL,
+  email TEXT NOT NULL,
   password TEXT NOT NULL,
   role TEXT NOT NULL DEFAULT 'employe',
   departement_id INTEGER,
@@ -36,9 +37,7 @@ CREATE TABLE IF NOT EXISTS employees (
     ON DELETE SET NULL
 );
 
-CREATE INDEX IF NOT EXISTS idx_employees_departement_id ON employees(departement_id);
-CREATE INDEX IF NOT EXISTS idx_employees_role ON employees(role);
-CREATE INDEX IF NOT EXISTS idx_employees_actif ON employees(actif);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_employees_email ON employees(email);
 
 -- =========================
 -- Table: types_conge
@@ -125,11 +124,11 @@ INSERT INTO departements (id, nom, description) VALUES
 -- employees
 -- Note: "password" doit contenir un hash en vrai. Ici: valeurs de test.
 -- =========================
-INSERT INTO employees (id, nom, prenom, password, role, departement_id, date_embauche, actif, created_at, updated_at) VALUES
-  (1, 'Admin', 'System', 'test123', 'admin', 2, '2023-01-10', 1, datetime('now'), datetime('now')),
-  (2, 'Dupont', 'Marie', 'test123', 'rh', 1, '2023-03-15', 1, datetime('now'), datetime('now')),
-  (3, 'Martin', 'Ali', 'test123', 'employe', 2, '2024-02-01', 1, datetime('now'), datetime('now')),
-  (4, 'Nguyen', 'Sofia', 'test123', 'employe', 3, '2024-06-20', 1, datetime('now'), datetime('now'));
+INSERT INTO employees (id, nom, prenom, email, password, role, departement_id, date_embauche, actif, created_at, updated_at) VALUES
+  (1, 'Admin', 'System', 'admin@techmada.mg', 'admin123', 'admin', 2, '2023-01-10', 1, datetime('now'), datetime('now')),
+  (2, 'Dupont', 'Marie', 'rh@techmada.mg', 'rh123', 'rh', 1, '2023-03-15', 1, datetime('now'), datetime('now')),
+  (3, 'Martin', 'Ali', 'employe@techmada.mg', 'emp123', 'employe', 2, '2024-02-01', 1, datetime('now'), datetime('now')),
+  (4, 'Nguyen', 'Sofia', 'sofia@techmada.mg', 'emp123', 'employe', 3, '2024-06-20', 1, datetime('now'), datetime('now'));
 
 -- =========================
 -- types_conge
@@ -151,13 +150,13 @@ INSERT INTO soldes (id, employe_id, type_conge_id, annee, jours_attribues, jours
 
 -- =========================
 -- conges
--- statut: en_attente | approuve | refuse
+-- statut: en_attente | approuvee | refusee
 -- traite_par: id employé RH / admin
 -- =========================
 INSERT INTO conges (id, employe_id, type_conge_id, date_debut, date_fin, nb_jours, motif, statut, commentaire_rh, traite_par, created_at) VALUES
-  (1, 3, 1, '2026-05-20', '2026-05-24', 5, 'Vacances', 'approuve', 'OK', 2, datetime('now')),
+  (1, 3, 1, '2026-05-20', '2026-05-24', 5, 'Vacances', 'approuvee', 'OK', 2, datetime('now')),
   (2, 4, 1, '2026-06-10', '2026-06-12', 3, 'Déplacement familial', 'en_attente', NULL, NULL, datetime('now')),
-  (3, 3, 2, '2026-04-02', '2026-04-03', 2, 'Grippe', 'approuve', 'Certificat reçu', 2, datetime('now')),
-  (4, 4, 4, '2026-07-01', '2026-07-05', 5, 'Raisons personnelles', 'refuse', 'Période chargée', 2, datetime('now'));
+  (3, 3, 2, '2026-04-02', '2026-04-03', 2, 'Grippe', 'approuvee', 'Certificat reçu', 2, datetime('now')),
+  (4, 4, 4, '2026-07-01', '2026-07-05', 5, 'Raisons personnelles', 'refusee', 'Période chargée', 2, datetime('now'));
 
 COMMIT;
