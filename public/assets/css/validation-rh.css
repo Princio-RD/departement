@@ -1,0 +1,72 @@
+/* Filtres rapides (pills) */
+.filter-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: .8rem;
+  font-weight: 500;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.filter-chip.active {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--white);
+}
+
+.filter-chip:hover:not(.active) {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+
+/* Filtré par département (select) */
+.filter-dept {
+  font-size: .8rem;
+  padding: 6px 10px;
+  width: auto;
+  margin-left: auto;
+}
+
+/* Modal de confirmation de refus */
+.modal-refus {
+  margin-top: 1.5rem;
+}
+
+.modal-refus .form-section {
+  border-color: var(--danger-br);
+  background: var(--danger-bg);
+}
+
+.modal-refus .form-section h3 {
+  color: var(--danger);
+}
+
+/* Badge solde insuffisant */
+.solde-insuffisant {
+  font-family: 'DM Mono', monospace;
+  font-size: .82rem;
+  color: var(--warn);
+  font-weight: 500;
+}
+
+.solde-insuffisant span {
+  font-size: .72rem;
+  color: var(--danger);
+}
+
+/* Bouton approuver désactivé */
+.btn-approve:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}

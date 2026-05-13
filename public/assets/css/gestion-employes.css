@@ -1,0 +1,90 @@
+/* Barre de recherche et filtres */
+.search-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.search-input {
+  width: 200px;
+  padding: 6px 10px;
+  font-size: .8rem;
+}
+
+/* Badge de statut employé */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .7rem;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 12px;
+}
+
+.status-actif {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status-actif::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--success);
+  display: inline-block;
+}
+
+.status-inactif {
+  background: #f1efe8;
+  color: #7a8f80;
+}
+
+.status-inactif::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7a8f80;
+  display: inline-block;
+}
+
+/* Rôle badge (employe, rh, admin) */
+.role-badge {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #f1efe8;
+  color: #444441;
+}
+
+.role-badge.rh {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+.role-badge.admin {
+  background: var(--mint);
+  color: var(--forest);
+}
+
+/* Solde annuel dans le tableau */
+.solde-annuel {
+  font-family: 'DM Mono', monospace;
+  font-size: .82rem;
+  color: var(--forest);
+}
+
+.solde-annuel.empty {
+  color: var(--muted);
+}
+
+/* Flash info pour l'initialisation des soldes */
+.flash-info a {
+  color: var(--info);
+  font-weight: 500;
+  text-decoration: none;
+}
