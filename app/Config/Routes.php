@@ -10,10 +10,8 @@ $routes->get('/', 'Home::index');
 $routes->group('user', static function ($routes) {
     $routes->get('conges/nouveau', 'UserCongeController::new');
 
-    // Mes demandes
-    $routes->get('conges', 'UserCongeController::index');
+  $routes->get('conges', 'UserCongeController::index');
 
-    // Création / annulation
     $routes->post('conges', 'UserCongeController::create');
     $routes->post('conges/(:num)/annuler', 'UserCongeController::cancel/$1');
 });
