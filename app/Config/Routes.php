@@ -7,8 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Racine du site -> login (supporte aussi /index.php)
-$routes->get('/', static fn () => redirect()->to('/login'));
-$routes->get('index.php', static fn () => redirect()->to('/login'));
+$routes->get('/', static fn() => redirect()->to('/login'));
+$routes->get('index.php', static fn() => redirect()->to('/login'));
 
 // Auth
 $routes->get('login', 'AuthController::loginForm');
@@ -22,6 +22,7 @@ $routes->group('user', ['filter' => 'auth:employe,admin,rh'], static function ($
 
     // Dashboard employé
     $routes->get('dashboard', 'UserDashboardController::index');
+    $routes->get('calendrier', 'UserDashboardController::calendar');
 
     // Demandes
     $routes->get('conges', 'UserCongeController::index');
@@ -47,12 +48,26 @@ $routes->group('rh', ['filter' => 'auth:rh,admin'], static function ($routes) {
 $routes->group('admin', ['filter' => 'auth:admin'], static function ($routes) {
     // Support de la redirection post-login vers /admin
     $routes->get('/', 'AdminController::dashboard');
+    $routes->get('dashboard', 'AdminController::dashboard');
+    $routes->get('statistiques', 'AdminController::statistiques');
     $routes->get('employes', 'AdminController::employes');
+    $routes->get('create-employe', static fn() => redirect()->to('/admin/employes#ajout-employe'));
+    $routes->post('create-employe', 'AdminController::createEmploye');
     $routes->post('employes', 'AdminController::createEmploye');
+    $routes->get('employes/(:num)/edit', 'AdminController::editEmploye/$1');
+    $routes->post('employes/(:num)/edit', 'AdminController::updateEmploye/$1');
     $routes->get('employes/(:num)/toggle', 'AdminController::toggleEmploye/$1');
+    $routes->get('toggle-employe/(:num)', 'AdminController::toggleEmploye/$1');
+
+    // Édition des départements, types et soldes
+    $routes->get('departements/(:num)/edit', 'AdminController::editDepartement/$1');
+    $routes->post('departements/(:num)/edit', 'AdminController::updateDepartement/$1');
+    $routes->get('types-conge/(:num)/edit', 'AdminController::editTypeConge/$1');
+    $routes->post('types-conge/(:num)/edit', 'AdminController::updateTypeConge/$1');
+    $routes->get('soldes/(:num)/edit', 'AdminController::editSolde/$1');
+    $routes->post('soldes/(:num)/edit', 'AdminController::updateSolde/$1');
 
     // Autres pages admin
-    $routes->get('validation-rh', 'AdminController::validationRh');
     $routes->get('departements', 'AdminController::departements');
     $routes->get('types-conge', 'AdminController::typesConge');
     $routes->get('soldes', 'AdminController::soldes');

@@ -152,11 +152,29 @@ class UserCongeController extends BaseController
 
         $demandes = $builder->orderBy('conges.created_at', 'DESC')->findAll();
 
+        $stats = [
+            'total' => count($demandes),
+            'en_attente' => count(array_filter($demandes, static fn($d) => ($d['statut'] ?? '') === 'en_attente')),
+            'approuvee' => count(array_filter($demandes, static fn($d) => ($d['statut'] ?? '') === 'approuvee')),
+            'refusee' => count(array_filter($demandes, static fn($d) => ($d['statut'] ?? '') === 'refusee')),
+            'annulee' => count(array_filter($demandes, static fn($d) => ($d['statut'] ?? '') === 'annulee')),
+            'jours_total' => array_sum(array_map(static fn($d) => (int) ($d['nb_jours'] ?? 0), $demandes)),
+        ];
+
+        $typeStats = [];
+        foreach ($demandes as $demande) {
+            $label = (string) ($demande['type_libelle'] ?? 'Non défini');
+            $typeStats[$label] = ($typeStats[$label] ?? 0) + 1;
+        }
+        arsort($typeStats);
+
         return view('user/mes-demandes', [
             'demandes' => $demandes,
             'filters' => [
                 'statut' => $statut,
             ],
+            'stats' => $stats,
+            'typeStats' => $typeStats,
         ]);
     }
 
